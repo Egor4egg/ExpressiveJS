@@ -101,7 +101,7 @@ console.log(prepend(10, prepend(20, null)));
 console.log(nth(arrayToList([10, 20, 30]), 1));
 */
 
-//глубокое сравнение ???
+//глубокое сравнение 
 
 function deepEqual(value1, value2){
     if (value1 === value2){
