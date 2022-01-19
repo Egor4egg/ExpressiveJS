@@ -35,6 +35,7 @@ const readline = require('readline').createInterface({
     output: process.stdout
 });
 
+
 readline.question("Enter the size chess board ",size=>{
     for (let i=0; i<size; i++){
         for (let j =0; j<size; j++){
@@ -50,5 +51,3 @@ readline.question("Enter the size chess board ",size=>{
     console.log(container);
     readline.close();
 });
-
-
