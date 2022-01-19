@@ -1,6 +1,6 @@
 //1 диапозон в массиве
 /*function range(start,end,step){
-    var array =[]
+    let array =[]
     if (arguments.length == 2){
         step = 1;
     }
@@ -19,8 +19,8 @@ return array
 }
 
 function sum(array){
-    var sum = 0;
-    var i;
+    let sum = 0;
+    let i;
     for (i = 0; i < array.length; i++){
          sum += array[i];
     }
@@ -33,7 +33,7 @@ console.log(sum(range(1,10)))
 
 //Вспять массив
 /*
-var array = [1,2,3,4,5];
+let array = [1,2,3,4,5];
 
 function reverseArray(array){
     array1 = []
@@ -44,7 +44,7 @@ function reverseArray(array){
 }
 
 function reverseArrayInPlace(array){
-    for (var i = array.length;i--;){
+    for (let i = array.length;i--;){
         array.push(array[i])
     }
     return array;
@@ -57,7 +57,7 @@ console.log(reverseArrayInPlace(array))
 //Список
 /*
 function arrayToList(array){
-    var result = null;
+    let result = null;
     for (i = array.length - 1; i >= 0; i --){
         result ={
             value: array[i],
@@ -68,7 +68,7 @@ function arrayToList(array){
 }
 
 function listToArray(list){
-    var result = [];
+    let result = [];
     do{
         result.push(list.value);
         list = list.rest;
@@ -101,7 +101,7 @@ console.log(prepend(10, prepend(20, null)));
 console.log(nth(arrayToList([10, 20, 30]), 1));
 */
 
-//глубокое сравнение ???
+//глубокое сравнение 
 function deepEqual(value1, value2){
     if (value1 === value2){
         return true;
@@ -110,12 +110,12 @@ function deepEqual(value1, value2){
         return false;
     }
 
-    var properties1 = 0;
-    var properties2 = 0;
-    for (var prop in value1){
+    let properties1 = 0;
+    let properties2 = 0;
+    for (let prop in value1){
         properties1++;
     }
-    for (var prop in value2){
+    for (let prop in value2){
         properties2++;
         if (!(prop in value1 ) || !deepEqual(value1[prop],value2[prop])){
             return false;
@@ -124,7 +124,7 @@ function deepEqual(value1, value2){
     return properties1 == properties2;
 }
 
-var obj = {here: {is: "an"}, object: 2};
+let obj = {here: {is: "an"}, object: 2};
 console.log(deepEqual(obj, obj));
 // → true
 console.log(deepEqual(obj, {here: 1, object: 2}));

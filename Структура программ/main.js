@@ -1,9 +1,9 @@
 //1 task
 
-/*var i;
-var containStar = ' ';
-var star = '#'
-for (i=0; i < 7; i +=1){
+/*
+let containStar = ' ';
+let star = '#'
+for (let i=0; i < 7; i ++){
     containStar +=star
     console.log(containStar)
 }
@@ -11,8 +11,7 @@ for (i=0; i < 7; i +=1){
 //2 task
 
 /*
-var i;
-for (i=1;i<=100;i++){
+for (let i=1;i<=100;i++){
     if (i % 3 == 0 && i % 5 == 0){
         console.log('FizzBuzz');
         continue;
@@ -30,20 +29,26 @@ for (i=1;i<=100;i++){
 */
 
 //3 task
+let container = ' ';
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-var i;
-var j;
-var size = prompt("Введите размер доски")
-var container = ' ';
-for (i=0; i<size; i++){
-    for (j=0; j<size; j++){
-        if ((i+j) % 2 !=0){
-            container += "#";
+readline.question("Enter the size chess board ",size=>{
+    for (let i=0; i<size; i++){
+        for (let j =0; j<size; j++){
+            if ((i+j) % 2 !=0){
+                container += "#";
+            }
+            else{
+                container += " ";
+            }
         }
-        else{
-            container += " ";
-        }
+        container+= '\n';
     }
-    container+= '\n';
-}
-console.log(container);
+    console.log(container);
+    readline.close();
+});
+
+

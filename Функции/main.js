@@ -1,18 +1,8 @@
 // Поиск минимума
-/*
-function min (number1, number2){
-    if (number1 > number2){
-        console.log(number2)
-    }
-    else if (number2 > number1){
-        console.log(number1)
-    }
-    else{
-        console.log("Number 1 is equal Number 2")
-    }
-}
-min(10,10)
-*/
+
+const min = (number1, number2) =>(number1 < number2) ? number1 : number2  ;
+console.log(`${min(5,3)} меньше`)
+
 
 //Проверка на чётность
 
@@ -35,8 +25,8 @@ console.log(isEven(-2));
 //Считаем бобы
 
 function countBs(str){
-    var count = 0;
-    for (var i = 0; i < str.length; i+=1){
+    let count = 0;
+    for (let i = 0; i < str.length; i+=1){
         if (str.charAt(i)=='B'){
             count+=1;
         }
