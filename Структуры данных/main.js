@@ -20,8 +20,7 @@ return array
 
 function sum(array){
     let sum = 0;
-    let i;
-    for (i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++){
          sum += array[i];
     }
     return sum
@@ -32,31 +31,42 @@ console.log(sum(range(1,10)))
 */
 
 //Вспять массив
-/*
+
 let array = [1,2,3,4,5];
 
+
 function reverseArray(array){
-    array1 = []
-    for (i=array.length-1; i >=0; i --){
-        array1.push(array[i])
+    if (array.length == 0){
+        return emptyArray = {}
     }
-    return array1;
+    reversedArray = []
+    for (i=array.length-1; i >=0; i --){
+        reversedArray.push(array[i])
+    }
+
+    return reversedArray;
 }
 
 function reverseArrayInPlace(array){
+    if (array.length == 0){
+        return emptyArray = {}
+    }
     for (let i = array.length;i--;){
         array.push(array[i])
     }
     return array;
 }
+
 console.log(reverseArray(array))
 console.log(reverseArrayInPlace(array))
 
-*/
+
 
 //Список
-/*
 function arrayToList(array){
+    if (array.length == 0){
+        return emptyArray = {}
+    }
     let result = null;
     for (i = array.length - 1; i >= 0; i --){
         result ={
@@ -68,6 +78,9 @@ function arrayToList(array){
 }
 
 function listToArray(list){
+    if (list.length == 0){
+        return emptyArray = {}
+    }
     let result = [];
     do{
         result.push(list.value);
@@ -77,6 +90,9 @@ function listToArray(list){
 }
 
 function prepend (list, el){
+    if (array.list == 0){
+        return emptyArray = {}
+    }
     return{
         value: list,
         rest: el
@@ -84,6 +100,9 @@ function prepend (list, el){
 }
 
 function nth (list,index){
+    if (list.length == 0){
+        return emptyArray = {}
+    }
     if(!list){
         return undefined;
     }
@@ -95,18 +114,21 @@ function nth (list,index){
     }
 }
 
+
 console.log(arrayToList([10,20]))
 console.log(listToArray(arrayToList([10,20,30])))
 console.log(prepend(10, prepend(20, null)));
-console.log(nth(arrayToList([10, 20, 30]), 1));
-*/
+console.log(nth(arrayToList([10, 20, 30]), 2));
+
 
 //глубокое сравнение 
+const isObject = object => typeof object != 'object' || object == null;
+
 function deepEqual(value1, value2){
     if (value1 === value2){
         return true;
     }
-    if ((typeof value1 !="object" || value1 == null || typeof value2 !="object" || value2 == null)){
+    if ((isObject(value1)||isObject(value2))){
         return false;
     }
 

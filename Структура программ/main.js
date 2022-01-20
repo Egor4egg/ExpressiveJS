@@ -1,5 +1,8 @@
 //1 task
 
+const { read } = require('fs');
+const { type } = require('os');
+
 /*
 let containStar = ' ';
 let star = '#'
@@ -34,9 +37,7 @@ const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
 });
-
-
-readline.question("Enter the size chess board ",size=>{
+function print(size){
     for (let i=0; i<size; i++){
         for (let j =0; j<size; j++){
             if ((i+j) % 2 !=0){
@@ -50,4 +51,14 @@ readline.question("Enter the size chess board ",size=>{
     }
     console.log(container);
     readline.close();
-});
+}
+function answer(){
+   readline.question("Enter the size chess board ", size=>{
+       isNaN(size) ? answer() : print(size)
+    });
+};
+answer();
+
+
+
+
